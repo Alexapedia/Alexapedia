@@ -1,0 +1,141 @@
+:host {
+  display: block;
+}
+
+.why__head {
+  margin-bottom: 2.75rem;
+}
+
+.why__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.why-card {
+  padding: 1.5rem;
+  transition:
+    transform 0.35s var(--ease-out),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-glow);
+}
+
+.why-card__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.1rem;
+  color: var(--magenta-bright);
+  background: rgba(233, 30, 140, 0.12);
+  border: 1px solid rgba(233, 30, 140, 0.25);
+}
+
+.why-card__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.why-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.why-card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.why__stack {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.why__stack-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rose-gold);
+  margin-bottom: 1rem;
+}
+
+.why__stack ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.why__stack li {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  background: rgba(7, 4, 15, 0.4);
+}
+
+.why__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.75rem 2rem;
+  flex-wrap: wrap;
+}
+
+.why__cta h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.why__cta p {
+  color: var(--text-muted);
+  max-width: 48ch;
+}
+
+@media (max-width: 1100px) {
+  .why__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .why__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-card:hover {
+    transform: none;
+  }
+
+  .why__cta {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.35rem 1.25rem;
+    text-align: center;
+  }
+
+  .why__cta .btn {
+    width: 100%;
+  }
+
+  .why__cta p {
+    margin-inline: auto;
+  }
+}

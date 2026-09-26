@@ -1,0 +1,20 @@
+<section class="section process" id="process">
+  <div class="container">
+    <div class="process__head" appReveal data-reveal>
+      <p class="section-label">How we work</p>
+      <h2 class="section-title">From idea to launch — without the chaos</h2>
+    </div>
+
+    <ol class="process__timeline">
+      @for (step of steps; track step.step; let i = $index) {
+        <li appReveal data-reveal [attr.data-reveal-delay]="i + 1">
+          <div class="step-num">{{ step.step }}</div>
+          <div class="step-body">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.description }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

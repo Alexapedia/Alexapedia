@@ -1,0 +1,11 @@
+node_modules
+dist
+.angular
+.git
+.vscode
+*.md
+.editorconfig
+.gitignore
+docker-compose*.yml
+**/*.spec.ts
+.DS_Store

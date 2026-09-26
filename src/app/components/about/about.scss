@@ -1,0 +1,122 @@
+:host {
+  display: block;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.about__frame {
+  position: relative;
+  border-radius: 1.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: var(--shadow-glow);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+}
+
+.about__frame img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  padding: 14%;
+  background: transparent;
+  filter: drop-shadow(0 16px 40px rgba(233, 30, 140, 0.35));
+}
+
+.about__badge {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 1rem 1.15rem;
+  border-radius: 1rem;
+  background: rgba(7, 4, 15, 0.72);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.about__badge span {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rose-gold);
+}
+
+.about__badge strong {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+}
+
+.about__text {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  max-width: 48ch;
+}
+
+.about__list {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.about__list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+
+.check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--gradient-brand);
+  position: relative;
+}
+
+.check::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 4px;
+  width: 5px;
+  height: 9px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 1024px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about__frame {
+    max-width: 420px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .about__badge {
+    left: 0.65rem;
+    right: 0.65rem;
+    bottom: 0.65rem;
+    padding: 0.85rem;
+  }
+
+  .about__badge strong {
+    font-size: 0.85rem;
+  }
+}

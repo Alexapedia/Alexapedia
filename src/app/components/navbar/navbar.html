@@ -1,0 +1,46 @@
+<header class="nav" [class.nav--scrolled]="scrolled()" [class.nav--open]="menuOpen()">
+  <div class="nav__inner container">
+    <a href="#top" class="nav__brand" (click)="closeMenu()" aria-label="Alexapedia home">
+      <img src="assets/logo-mark.png" alt="" class="nav__logo" width="44" height="44" />
+      <span class="nav__name">
+        <strong>{{ company.name }}</strong>
+        <small>{{ company.tagline }}</small>
+      </span>
+    </a>
+
+    <!-- Desktop links -->
+    <nav class="nav__desktop" aria-label="Primary">
+      @for (link of links; track link.href) {
+        <a [href]="link.href">{{ link.label }}</a>
+      }
+      <a href="#contact" class="btn btn-primary nav__cta">Get started</a>
+    </nav>
+
+    <button
+      class="nav__burger"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Toggle menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile overlay — outside header so fixed covers full viewport -->
+<nav
+  class="nav__mobile"
+  [class.is-open]="menuOpen()"
+  aria-label="Mobile"
+  [attr.aria-hidden]="!menuOpen()"
+>
+  @for (link of links; track link.href) {
+    <a [href]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+  }
+  <a href="#contact" class="btn btn-primary nav__cta" (click)="closeMenu()">
+    Get started
+  </a>
+</nav>

@@ -1,0 +1,69 @@
+<section class="hero" id="top">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__glow hero__glow--a"></div>
+    <div class="hero__glow hero__glow--b"></div>
+  </div>
+
+  <div class="container hero__layout">
+    <div class="hero__copy" appReveal data-reveal>
+      <div class="hero__mark-row">
+        <img src="assets/logo-mark.png" alt="" class="hero__mark" width="56" height="56" />
+        <p class="hero__eyebrow">{{ company.legalName }}</p>
+      </div>
+
+      <h1 class="hero__title">
+        <span class="hero__brand">{{ company.name }}</span>
+        <span class="hero__tagline">{{ company.tagline }}</span>
+      </h1>
+
+      <p class="hero__lead">{{ company.heroSub }}</p>
+
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn-primary">
+          {{ company.ctaPrimary }}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M5 12h14M13 6l6 6-6 6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+        <a href="#work" class="btn btn-ghost">{{ company.ctaSecondary }}</a>
+      </div>
+
+      <p class="hero__trust">{{ company.trustLine }}</p>
+    </div>
+
+    <div class="hero__visual" appReveal data-reveal="scale" data-reveal-delay="2">
+      <div class="hero__stage">
+        <div class="hero__stage-glass">
+          <img
+            src="assets/hero-products.png"
+            alt="Apps, dashboards and SaaS products by Alexapedia"
+            class="hero__stage-products"
+          />
+          <div class="hero__stage-frost" aria-hidden="true"></div>
+        </div>
+        <img
+          src="assets/logo-mark.png"
+          alt="Alexapedia"
+          class="hero__stage-mark"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero__stats" appReveal data-reveal data-reveal-delay="3">
+      @for (stat of stats; track stat.label) {
+        <div class="stat">
+          <strong>{{ valueOf(stat) }}{{ stat.suffix }}</strong>
+          <span>{{ stat.label }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

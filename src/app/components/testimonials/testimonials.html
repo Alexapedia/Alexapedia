@@ -1,0 +1,29 @@
+<section class="section clients" id="clients">
+  <div class="container">
+    <div class="clients__head" appReveal data-reveal>
+      <p class="section-label">Client love</p>
+      <h2 class="section-title">When the product lands, the relationship deepens</h2>
+      <p class="section-lead">
+        Mock quotes for now — swap them with real client feedback in
+        <code>company.data.ts</code>.
+      </p>
+    </div>
+
+    <div class="clients__grid">
+      @for (t of items; track t.name; let i = $index) {
+        <blockquote class="quote glass" appReveal data-reveal [attr.data-reveal-delay]="i + 1">
+          <div class="quote__stars" [attr.aria-label]="t.rating + ' out of 5 stars'">
+            @for (_ of stars(t.rating); track $index) {
+              <span>★</span>
+            }
+          </div>
+          <p>“{{ t.quote }}”</p>
+          <footer>
+            <strong>{{ t.name }}</strong>
+            <span>{{ t.role }} · {{ t.company }}</span>
+          </footer>
+        </blockquote>
+      }
+    </div>
+  </div>
+</section>
