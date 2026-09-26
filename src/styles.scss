@@ -3,39 +3,44 @@
    ============================================ */
 
 :root {
-  /* Brand — from logo */
-  --bg-deep: #07040f;
-  --bg: #0c0618;
-  --bg-elevated: #140a24;
-  --bg-glass: rgba(28, 14, 48, 0.55);
-  --bg-glass-strong: rgba(36, 18, 62, 0.75);
+  --bg-deep: #0a0a0f;
+  --bg: #0e0e14;
+  --bg-elevated: #15151d;
+  --bg-glass: #111118;
+  --bg-glass-strong: #16161f;
 
-  --purple-deep: #2a0f4a;
-  --purple: #5b2a9e;
-  --purple-bright: #7b3fd4;
-  --magenta: #e91e8c;
-  --magenta-bright: #ff3aad;
-  --rose-gold: #d4a574;
-  --rose-gold-soft: #e8c9a8;
+  /* Single brand accent; legacy names below alias it so component styles stay in sync */
+  --accent: #7c5cff;
+  --accent-hover: #6b4bf0;
+  --accent-rgb: 124, 92, 255;
+  --accent-soft: #a594ff;
 
-  --text: #f4eef8;
-  --text-muted: #b9a8cc;
-  --text-dim: #7a6a8f;
+  --purple-deep: #1d1640;
+  --purple: var(--accent);
+  --purple-bright: var(--accent);
+  --magenta: var(--accent);
+  --magenta-bright: var(--accent-soft);
+  --rose-gold: var(--accent-soft);
+  --rose-gold-soft: #c9c9d6;
 
-  --border: rgba(212, 165, 116, 0.18);
-  --border-strong: rgba(233, 30, 140, 0.35);
+  --text: #ededf3;
+  --text-muted: #a1a1b3;
+  --text-dim: #6e6e82;
 
-  --gradient-brand: linear-gradient(135deg, #7b3fd4 0%, #e91e8c 55%, #d4a574 100%);
-  --gradient-glow: linear-gradient(135deg, rgba(123, 63, 212, 0.45), rgba(233, 30, 140, 0.35));
-  --gradient-text: linear-gradient(115deg, #f4eef8 10%, #e8c9a8 45%, #ff3aad 80%);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.18);
 
-  --shadow-glow: 0 0 60px rgba(233, 30, 140, 0.25);
-  --radius: 1.25rem;
-  --radius-sm: 0.75rem;
+  --gradient-brand: linear-gradient(var(--accent), var(--accent));
+  --gradient-glow: linear-gradient(rgba(var(--accent-rgb), 0.06), rgba(var(--accent-rgb), 0.06));
+  --gradient-text: linear-gradient(#ffffff, #ffffff);
+
+  --shadow-glow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  --radius: 1rem;
+  --radius-sm: 0.625rem;
   --nav-h: 4.5rem;
 
-  --font-display: 'Syne', system-ui, sans-serif;
-  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -128,10 +133,7 @@ ol {
 }
 
 .section-label::before {
-  content: '';
-  width: 1.5rem;
-  height: 1px;
-  background: var(--gradient-brand);
+  content: none;
 }
 
 .section-title {
@@ -173,110 +175,39 @@ ol {
 }
 
 .btn-primary {
-  background: var(--gradient-brand);
+  background: var(--accent);
   color: #fff;
-  box-shadow: 0 8px 32px rgba(233, 30, 140, 0.35);
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(233, 30, 140, 0.5);
+  background: var(--accent-hover);
 }
 
 .btn-ghost {
   background: transparent;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-strong);
   color: var(--text);
-  backdrop-filter: blur(8px);
 }
 
 .btn-ghost:hover {
-  border-color: var(--border-strong);
-  background: rgba(233, 30, 140, 0.08);
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.28);
 }
 
-/* Glass card */
 .glass {
   background: var(--bg-glass);
   border: 1px solid var(--border);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
   border-radius: var(--radius);
 }
 
-/* Ambient background mesh */
 .bg-mesh {
   position: fixed;
   inset: 0;
   z-index: -2;
   pointer-events: none;
-  overflow: hidden;
   background:
-    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(123, 63, 212, 0.35), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(233, 30, 140, 0.22), transparent 50%),
-    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(42, 15, 74, 0.6), transparent 55%),
+    radial-gradient(ellipse 70% 40% at 50% -10%, rgba(var(--accent-rgb), 0.12), transparent 60%),
     var(--bg-deep);
-}
-
-.bg-mesh::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0.07;
-  background-image:
-    linear-gradient(rgba(212, 165, 116, 0.4) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212, 165, 116, 0.4) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
-}
-
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.45;
-  animation: orb-float 18s ease-in-out infinite;
-}
-
-.orb-1 {
-  width: 420px;
-  height: 420px;
-  background: var(--purple-bright);
-  top: 10%;
-  left: -8%;
-}
-
-.orb-2 {
-  width: 360px;
-  height: 360px;
-  background: var(--magenta);
-  top: 40%;
-  right: -10%;
-  animation-delay: -6s;
-}
-
-.orb-3 {
-  width: 280px;
-  height: 280px;
-  background: var(--rose-gold);
-  bottom: 5%;
-  left: 35%;
-  opacity: 0.2;
-  animation-delay: -12s;
-}
-
-@keyframes orb-float {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(30px, -40px) scale(1.08);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.95);
-  }
 }
 
 /* Reveal on scroll */
@@ -354,7 +285,7 @@ ol {
   padding: 0.85rem 1rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
-  background: rgba(7, 4, 15, 0.55);
+  background: rgba(10, 10, 15, 0.55);
   color: var(--text);
   font-family: inherit;
   font-size: 0.95rem;
@@ -367,8 +298,8 @@ ol {
 .field input:focus,
 .field textarea:focus,
 .field select:focus {
-  border-color: var(--magenta);
-  box-shadow: 0 0 0 3px rgba(233, 30, 140, 0.2);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.2);
 }
 
 .field textarea {
@@ -377,7 +308,7 @@ ol {
 }
 
 ::selection {
-  background: rgba(233, 30, 140, 0.4);
+  background: rgba(var(--accent-rgb), 0.4);
   color: #fff;
 }
 
@@ -412,14 +343,6 @@ ol {
 @media (max-width: 768px) {
   .container {
     width: min(1120px, calc(100% - 1.25rem));
-  }
-
-  .orb-1,
-  .orb-2,
-  .orb-3 {
-    width: 220px;
-    height: 220px;
-    filter: blur(60px);
   }
 }
 

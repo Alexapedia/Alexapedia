@@ -60,7 +60,7 @@
 .contact__socials a:hover {
   border-color: var(--border-strong);
   color: var(--text);
-  background: rgba(233, 30, 140, 0.1);
+  background: rgba(var(--accent-rgb), 0.1);
 }
 
 .contact__form-wrap {

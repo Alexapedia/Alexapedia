@@ -22,7 +22,7 @@
 }
 
 .why-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-3px);
   border-color: var(--border-strong);
   box-shadow: var(--shadow-glow);
 }
@@ -35,8 +35,8 @@
   place-items: center;
   margin-bottom: 1.1rem;
   color: var(--magenta-bright);
-  background: rgba(233, 30, 140, 0.12);
-  border: 1px solid rgba(233, 30, 140, 0.25);
+  background: rgba(var(--accent-rgb), 0.12);
+  border: 1px solid rgba(var(--accent-rgb), 0.25);
 }
 
 .why-card__icon svg {
@@ -85,7 +85,7 @@
   border-radius: 999px;
   border: 1px solid var(--border);
   color: var(--text-muted);
-  background: rgba(7, 4, 15, 0.4);
+  background: rgba(10, 10, 15, 0.4);
 }
 
 .why__cta {

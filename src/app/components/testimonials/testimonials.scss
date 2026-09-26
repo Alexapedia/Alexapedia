@@ -9,7 +9,7 @@
 .clients__head code {
   font-size: 0.85em;
   color: var(--magenta-bright);
-  background: rgba(233, 30, 140, 0.12);
+  background: rgba(var(--accent-rgb), 0.12);
   padding: 0.1rem 0.4rem;
   border-radius: 4px;
 }
@@ -31,7 +31,7 @@
 }
 
 .quote:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   border-color: var(--border-strong);
 }
 

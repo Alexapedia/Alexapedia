@@ -5,7 +5,7 @@
 .footer {
   border-top: 1px solid var(--border);
   padding: 3rem 0 2rem;
-  background: rgba(7, 4, 15, 0.6);
+  background: rgba(10, 10, 15, 0.6);
 }
 
 .footer__grid {
@@ -33,7 +33,6 @@
   border-radius: 0;
   object-fit: contain;
   background: transparent;
-  filter: drop-shadow(0 2px 8px rgba(233, 30, 140, 0.35));
 }
 
 .footer__brand p {

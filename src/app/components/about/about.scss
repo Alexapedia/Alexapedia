@@ -26,7 +26,6 @@
   object-fit: contain;
   padding: 14%;
   background: transparent;
-  filter: drop-shadow(0 16px 40px rgba(233, 30, 140, 0.35));
 }
 
 .about__badge {
@@ -36,7 +35,7 @@
   bottom: 1rem;
   padding: 1rem 1.15rem;
   border-radius: 1rem;
-  background: rgba(7, 4, 15, 0.72);
+  background: rgba(10, 10, 15, 0.72);
   backdrop-filter: blur(16px);
   border: 1px solid var(--border);
   display: flex;
